@@ -1,0 +1,14 @@
+$input-border-color: #C6CBD4;
+$default-border-radius: 6px;
+
+.text-input {
+  font-size: 15px;
+  padding: 15px 10px;
+  border: 1px solid $input-border-color;
+  border-radius: $default-border-radius;
+  background-color: #FFFFFF;
+
+  &--login-form {
+    width: 400px;
+  }
+}

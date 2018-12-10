@@ -1,0 +1,46 @@
+$regular-button-border-radius: 20px;
+$regular-button-font-size: 16px;
+
+.button {
+  cursor: pointer;
+  text-align: center;
+
+  &--minimal {
+    text-align: initial;
+  }
+
+  &--regular {
+    font-size: $regular-button-font-size;
+    border-radius: $regular-button-border-radius;
+    width: 200px;
+    line-height: 40px;
+  }
+
+  &--tag {
+    display: inline-block;
+    padding: 0 15px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 4px;
+  }
+
+  &--trash {
+    padding: 0;
+  }
+
+  &--blue {
+    color: white;
+    background: $blue;
+  }
+
+  &--violet {
+    color: white;
+    background: $violet;
+  }
+
+  &--violet-transparent {
+    color: $violet;
+    background: none;
+    border: 1px solid $violet;
+  }
+}

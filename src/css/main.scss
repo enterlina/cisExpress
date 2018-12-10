@@ -1,0 +1,24 @@
+@import 'colors';
+@import 'inputs';
+@import 'buttons';
+@import 'interface-elements';
+@import 'login-page';
+@import 'projects-page';
+@import 'side-menu';
+@import 'data-table';
+@import 'content-container';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Maison Neue", arial;
+  margin: 0;
+}
+
+.main-container {
+  max-width: 1280px;
+  margin: auto;
+}

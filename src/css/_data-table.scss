@@ -1,0 +1,84 @@
+$table-collapse-threshold: 420px;
+
+.data-table {
+  display: table;
+  width: 100%;
+
+  &__row {
+    position: relative;
+    display: table-row;
+    height: 65px;
+    box-shadow: 0 1px 0 rgba($light-gray, .3);
+    cursor: pointer;
+
+    &:not(&--header):hover {
+      background: rgba(120,135,153,0.08);
+      box-shadow: -4px 0 0 $violet, 0 1px 0 rgba($light-gray, .3);
+    }
+
+    &--selected {
+      background: rgba(120,135,153,0.08);
+      box-shadow: -4px 0 0 $violet;
+    }
+
+    &--header {
+      .data-table__cell {
+        font-weight: bold;
+        opacity: .6;
+
+        &--sorted-asc {
+          opacity: 1;
+          .cell-content {
+            &:after {
+              content: '^';
+              display: block;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        &--sorted-desc {
+          opacity: 1;
+          .cell-content {
+            &:after {
+              content: 'v';
+              display: block;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        .cell-content {
+          display: flex;
+          align-content: center;
+        }
+      }
+    }
+  }
+
+  &__cell {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 12px;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &--bold {
+      font-weight: bold;
+    }
+
+    &--max-width-264 {
+      max-width: 264px;
+    }
+  }
+}
+
+@media (max-width: $table-collapse-threshold) {
+  .data-table {
+    &__cell {
+      display: block;
+    }
+  }
+}

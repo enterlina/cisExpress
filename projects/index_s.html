@@ -1,0 +1,225 @@
+<html><head>
+    <title>cisExpress</title>
+    <link rel="stylesheet" type="text/css" href="../build/css/main.css">
+    <script type="module" src="../build/js/projectsPage.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.4/d3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/britecharts@2/dist/bundled/britecharts.min.js"></script>
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/britecharts/dist/css/britecharts.min.css" type="text/css" /></head>
+    
+  </head>
+  <body>
+
+      <div class="content-container">
+          <div class="content-container__header">cisExpress</div>
+          <div class="internal-page-container hidden">
+            <div class="navigation__back-btn-wrapper">
+              <div class="navigation__back-btn"></div>
+            </div>
+            <div class="js-project-description-container project-description-container">
+              <div class="js-project-description-header project-description-header" title="Max003">Max003</div>
+              <div class="project-description-table">
+                <div class="project-description-table__row project-description-table__row--main">
+                  <div class="project-description-table__cell">
+                    <div class="project-info">
+                      <!-- <div class="project-info__header">Submission Date</div>
+                      <div class="js-project-submission-date project-info__data" title="2018/12/7 19:05">2018/12/7 19:05</div> -->
+                    </div>
+                  </div>
+                  <div class="project-description-table__cell">
+                    <div class="project-info">
+                      <!-- <div class="project-info__header">Submitted by</div>
+                      <div class="js-project-author project-info__data" title="Nikita_Agafonov@epam.com">Nikita_Agafonov@epam.com</div> -->
+                    </div>
+                  </div>
+                  <div class="project-description-table__cell">
+                    <div class="project-info">
+                      <div class="project-info__header">Status</div>
+                      <div class="project-info__data"><div class="js-project-status project-status project-status--submitted" title="submitted">submitted</div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-description-table__row">
+                  <div class="project-description-table__cell">
+                    <div class="project-info">
+                      <div class="project-info__header"># of expression values</div>
+                      <div class="js-project-entities-num project-info__data">4</div>
+                    </div>
+                  </div>
+                  <div class="project-description-table__cell">
+                    <div class="project-info">
+                      <div class="project-info__header">Mean Factor</div>
+                      <div class="js-project-desc-context project-info__data" title=""></div>
+                    </div>
+                  </div>
+                  <div class="project-description-table__cell">
+                    <div class="project-info">
+                      <div class="project-info__header">p-Value</div>
+                      <div class="js-project-concepts-num project-info__data">42</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-description-table__row">
+                  <!-- <div class="project-description-table__cell project-description-table__cell--font-size-regular">
+                    <div class="project-info">
+                      <div class="project-info__header">Attached File</div>
+                      <div class="project-info__data">
+                        <div class="js-entities-downloader-container"><div class="entities-downloader__wrapper"><a class="entities-downloader__btn" href="blob:https://dev.percayai.com/d55e936a-c801-4f5a-b74c-dbdb198bc71e" download="Max003_Entities.txt">Max003_Entities.txt</a></div></div>
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="project-description-table__cell project-description-table__cell--font-size-regular">
+                    <div class="project-info">
+                      <div class="project-info__header">Shared To</div>
+                      <div class="project-info__data">
+                        <div class="js-shared-list-wrapper"><div class="shared-list">
+                        <div class="shared-list__container"><div class="shared-list__item">asdf@email.com</div><div class="shared-list__item">asdf@email.com</div><div class="shared-list__item">asdf@email.com</div><div class="shared-list__item">asdf@email.com</div><div class="shared-list__item">asdf@email.com</div><div class="shared-list__item">asdf@email.com</div></div>
+                      <div class="shared-list__show-more">Show More</div>
+            </div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="js-project-desc-button-block project-description-buttons-block">
+                <div class="js-proj-desc-entities button button--regular button--inline button--medium button--blue">Entities</div>
+                <div class="js-proj-desc-vis button button--regular button--inline button--medium button--violet hidden">Visualize</div>
+                <div class="js-proj-desc-share button button--regular button--inline button--medium button--violet-transparent hidden">Share</div>
+                <div class="js-proj-desc-delete button button--regular button--inline button--medium button--violet-transparent">Delete</div>
+              </div> -->
+            </div>
+          </div>
+          <div class="create-project-form js-project-form">
+            <div class="create-project-form__section">
+              <div class="create-project-form__section-header">Find Motifs</div>
+              <div class="create-project-form__container">
+                <textarea rows="5" class="js-entities-list text-area text-area--project-form text-area--full-width text-area--resize-vertical"></textarea>
+              </div>
+              <div class="create-project-form__container">
+                <div class="create-project-form__container-header create-project-form__container-header--large">File Upload:</div>
+                <label class="button button--regular button--medium button--violet-transparent">
+                  <span>Choose File</span>
+                  <input type="file" hidden="" class="js-entities-file-input" accept=".txt, .csv">
+                </label>
+                <span class="note note--margined-left10">Files allowed: .txt or .fasta</span>
+              </div>
+            </div>
+            <div class="create-project-form__section create-project-form__section--grow2">
+             
+            </div>
+            <div class="create-project-form__section create-project-form__section--full-width">
+              <div class="js-submit-form button button--regular button--medium button--violet button--inline">Search</div>
+              <div class="js-cancel-form button button--regular button--medium button--gray button--inline">Reset</div>
+            </div>
+          </div>
+         
+        <div class="data-table project-page-data-table"><div class="data-table__header"><span>Table Data</span><span>  Summary Data</span></div></div>
+        <div class="data-table__header"><span><br><br>TOTAL TISSUES Z-SCORE</span></div>
+        <div class="js-bar-chart-container card--chart"></div>
+        <div class="data-table__header"><span><br><br>TOP 5 MOTIFS</span></div>
+        <div class="js-donut-container"></div>
+        <div class="js-donut-chart-container donut-chart-container"></div>
+        <div class="js-legend-chart-container legend-chart-container"></div>
+        <div class="data-table__header"><span><br><br>COMPARE MOTIFS THROUGH THE TISSUE</span></div>
+        <div class="js-bar-container"></div>
+
+      </div>
+
+
+    <script id="jsbin-javascript">
+
+        const data = [
+              { name: 'Brain', id: 1, quantity: 86, percentage: 5 },
+              { name: 'Colon', id: 2, quantity: 300, percentage: 18 },
+              { name: 'Kidney', id: 3, quantity: 276, percentage: 16 },
+              { name: 'Lung', id: 4, quantity: 195, percentage: 11 },
+              { name: 'Stomach', id: 5, quantity: 36, percentage: 2 },
+              { name: 'Other', id: 0, quantity: 814, percentage: 48 }
+            ];
+      
+      function createHorizontalBarChart() {
+          let barChart = britecharts.bar(),
+              margin = {
+                      left: 120,
+                      right: 20,
+                      top: 20,
+                      bottom: 30
+              },
+              barContainer = d3.select('.js-bar-container'),
+              containerWidth = barContainer.node() ? barContainer.node().getBoundingClientRect().width : false;
+      
+          barChart
+              .isHorizontal(true)
+              .margin(margin)
+              .width(containerWidth)
+              .colorSchema(britecharts.colors.colorSchemas.britecharts)
+              .valueLabel('percentage')
+              .height(300);
+      
+          barContainer.datum(data).call(barChart);
+      }
+      
+      function createDonutChart() {
+        let donutChart = britecharts.donut();
+      
+        donutChart
+          .width(400)
+          .height(300);
+      
+        d3.select('.js-donut-container').datum(data).call(donutChart);
+      
+      }
+      
+      createHorizontalBarChart();
+      createDonutChart();
+      
+      
+      let barData = {
+                data:[
+                  {name: "Brain", value: 0.08167},
+                  {name: "Colon", value: 0.01492},
+                  {name: "Kidney", value: 0.02782},
+                  {name: "Lung", value: 0.04253},
+                  {name: "Ovary", value: 0.12702},
+                  {name: "Prostate", value: 0.02288},
+                  {name: "Stomach", value: 0.02015},
+                  {name: "Heart", value: 0.06094},
+                  {name: "Pancreas", value: 0.06966},
+                  {name: "Liver", value: 0.00153},
+                  {name: "Trachea", value: 0.00772},
+                  {name: "Appendix", value: 0.04025},
+                ]
+              };
+      function createSimpleBarChart() {
+        let barChart = britecharts.bar(),
+            barContainer = d3.select('.js-bar-chart-container'),
+            containerWidth = barContainer.node() ? barContainer.node().getBoundingClientRect().width : false,
+            dataset;
+      
+        
+        if (containerWidth) {
+          dataset = barData.data;
+      
+      
+          barChart
+            .width(containerWidth)
+            // .xAxisLabel('X Axis Label')
+            // .yAxisLabel('Y Axis Label')
+            .height(300);
+      
+      
+          barContainer.datum(dataset).call(barChart);
+        };
+      };
+      createSimpleBarChart();
+          
+          
+          
+          
+      </script>
+     
+</body></html>
+
+        

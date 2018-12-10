@@ -1,0 +1,9 @@
+.data-table {
+  &__cell {
+    .actions-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+

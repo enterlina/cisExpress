@@ -1,0 +1,70 @@
+.main-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.branding {
+  width: 509px;
+  height: 100%;
+  background-color: rgba(20,15,48,0.54);
+
+  &__title {
+    text-align: right;
+    font-size: 72px;
+    padding: 100px 50px;
+    text-transform: uppercase;
+
+    &--sub0 {
+      color: #FEB000;
+    }
+
+    &--sub1 {
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+
+.login-form-container {
+  margin: 0 0 0 37px;
+  &__header {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 70px;
+    margin-bottom: 24px;
+  }
+
+  &__footer {
+    margin: 37px 0;
+  }
+
+  &__sign-in-button {
+    margin: 0 auto;
+  }
+
+  &__field {
+    margin-bottom: 18px;
+
+    &__header {
+      margin-bottom: 11px;
+    }
+  }
+}
+
+.login-form-container--forgot-password {
+  .login-form-container {
+    &__field--password {
+      display: none;
+    }
+
+    &__forgot-password-btn {
+      display: none;
+    }
+  }
+}
+

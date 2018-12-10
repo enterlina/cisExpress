@@ -1,0 +1,45 @@
+.project-status {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    margin-right: 9px;
+    background: $dark;
+  }
+
+  &--completed {
+    color: $green;
+
+    &:before {
+      background: $green;
+    }
+  }
+
+  &--failed {
+    color: $yellow;
+
+    &:before {
+      background: $yellow;
+    }
+  }
+
+  &--shared {
+    &:before {
+      content: 's';
+      display: block;
+      width: initial;
+      height: initial;
+      background: none;
+    }
+  }
+
+  &--submitted {
+
+  }
+}

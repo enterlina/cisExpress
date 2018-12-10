@@ -1,0 +1,13 @@
+$header-margin-bottom: 32px;
+$content-color: #333333;
+
+.content-container {
+  padding: 35px 52px;
+  color: $content-color;
+
+  &__header {
+    margin-bottom: $header-margin-bottom;
+    font-size: 28px;
+    font-weight: bold;
+  }
+}
