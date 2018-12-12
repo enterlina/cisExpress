@@ -1,5 +1,3 @@
-
-
 const data = [
         { name: 'Brain', id: 1, quantity: 86, percentage: 5 },
         { name: 'Colon', id: 2, quantity: 300, percentage: 18 },
@@ -43,9 +41,10 @@ d3.select('.js-donut-container').datum(data).call(donutChart);
 
 }
 
-createHorizontalBarChart();
-createDonutChart();
-
+// createHorizontalBarChart();
+// createDonutChart();
+window.onload = () => { createDonutChart() }
+window.onload = () => { createHorizontalBarChart() }
 
 let barData = {
         data:[
@@ -85,6 +84,7 @@ if (containerWidth) {
 };
 };
 createSimpleBarChart();
+window.onload = () => { createSimpleBarChart() }
     
 let stackedBarData = {
 data:[
@@ -195,7 +195,7 @@ chartTooltip
 tooltipContainer = d3.select('.js-stacked-bar-chart-tooltip-container .metadata-group');
 tooltipContainer.datum([]).call(chartTooltip);
 
-createHorizontalStackedBarChart(); 
-
+// createHorizontalStackedBarChart(); 
+window.onload = () => { createHorizontalStackedBarChart() }
           
           
