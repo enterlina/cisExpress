@@ -145,12 +145,17 @@
                                   <!-- <input value="20" min="15" max="30" step="2" type="range"/> -->
                               </div>
                              
-                              <div class="data-form__container-header asterisk--right asterisk--right--no-margin">Search Window Length:<div class="info-anchor info-anchor--margin-left15"></div></div>
+                              <div class="data-form__container-header asterisk--right asterisk--right--no-margin">Z-Score Range:<div class="info-anchor info-anchor--margin-left15"></div></div>
                               <div class="range-slider"><span> From  
                                   <input type="number" value="10" min="0" max="30"/>To
                                   <input type="number" value="30" min="0" max="30"/></span>
                                 <input value="10" min="0" max="30" step="2" type="range"/>
                                 <input value="30" min="0" max="30" step="2" type="range"/>
+                            </div>
+
+                            <div class="data-form__container">
+                              <div class="data-form__container-header">Number of Clusters:<div class="info-anchor info-anchor--margin-left15"></div></div>
+                              <input type="number" min="5" class="js-concepts-number text-input text-input--data-form">
                             </div>
                             
 
@@ -181,29 +186,42 @@
                     <div class="content">
                       <section>
                         <h2>Table Data</h2>
-                        <div class="data-table project-page-data-table"><div class="data-table__row data-table__row--header"><div class="data-table__cell" title="Motifs" data-header-idx="1"><span class="cell-content">Motifs</span></div><div class="data-table__cell" title="Cluster Groups" data-header-idx="0"><span class="cell-content">Cluster Groups</span></div><div class="data-table__cell" title="# of expression values" data-header-idx="2"><span class="cell-content"># Genes</span></div><div class="data-table__cell" title="# Expression Values" data-header-idx="3"><span class="cell-content"># Expression Values</span></div><div class="data-table__cell" title="p - Value" data-header-idx="4"><span class="cell-content">p - Value</span></div></div>
-                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">CGGAA</div><div class="data-table__cell " title="Group1">Group1</div><div class="data-table__cell " title="740">740</div><div class="data-table__cell " title="3.87">8.87</div><div class="data-table__cell " title="5.6 e-21">5.6 e-215</div></div>
-                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">CGGAC</div><div class="data-table__cell " title="Group1">Group1</div><div class="data-table__cell " title="700">700</div><div class="data-table__cell " title="3.87">6.35</div><div class="data-table__cell " title="5.6 e-21">5.6 e-215</div></div>
-                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">CGGAG</div><div class="data-table__cell " title="Group1">Group1</div><div class="data-table__cell " title="680">680</div><div class="data-table__cell " title="3.87">4.87</div><div class="data-table__cell " title="3.5 e-21">3.5 e-215</div></div>
+                        <div class="data-table project-page-data-table"><div class="data-table__row data-table__row--header"><div class="data-table__cell" title="Motifs" data-header-idx="1"><span class="cell-content">Motifs</span></div><div class="data-table__cell" title="Cluster Groups" data-header-idx="0"><span class="cell-content">Cluster Groups</span></div><div class="data-table__cell" title="Position" data-header-idx="2"><span class="cell-content">Position</span></div><div class="data-table__cell" title="Z-Score" data-header-idx="2"><span class="cell-content">Z-Score</span></div><div class="data-table__cell" title="# of expression values" data-header-idx="2"><span class="cell-content"># Genes</span></div><div class="data-table__cell" title="# Expression Values" data-header-idx="3"><span class="cell-content"># Expression Values</span></div><div class="data-table__cell" title="p - Value" data-header-idx="4"><span class="cell-content">p - Value</span></div></div>
+                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">ATGGC</div><div class="data-table__cell " title="Cluster 1">Cluster 1</div><div class="data-table__cell " title="35 : 88">35 : 88</div><div class="data-table__cell " title="7.13511">10.1857</div><div class="data-table__cell " title="740">740</div><div class="data-table__cell " title="3.87">8.87</div><div class="data-table__cell " title="5.6 e-21">4.83 e-13</div></div>
+                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">AACCCTAG</div><div class="data-table__cell " title="Cluster 1">Cluster 1</div><div class="data-table__cell " title="40 : 85">-64 : -32</div><div class="data-table__cell " title="7.13511">7.43958</div><div class="data-table__cell " title="700">700</div><div class="data-table__cell " title="3.87">6.35</div><div class="data-table__cell " title="5.6 e-21">5.6 e-215</div></div>
+                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">GATCTAG</div><div class="data-table__cell " title="Cluster 1">Cluster 1</div><div class="data-table__cell " title="285 : 334">285 : 334</div><div class="data-table__cell " title="7.13511">8.86419</div><div class="data-table__cell " title="680">680</div><div class="data-table__cell " title="3.87">4.87</div><div class="data-table__cell " title="3.5 e-21">3.5 e-215</div></div>
                         
-                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">GGCAA</div><div class="data-table__cell " title="Group1">Group2</div><div class="data-table__cell " title="790">790</div><div class="data-table__cell " title="3.87">8.87</div><div class="data-table__cell " title="3.5 e-21">3.5 e-215</div></div>
-                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">GGGAA</div><div class="data-table__cell " title="Group1">Group2</div><div class="data-table__cell " title="690">690</div><div class="data-table__cell " title="3.87">7.58</div><div class="data-table__cell " title="8.3 e-21">8.3 e-215</div></div>
-                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">GCGAG</div><div class="data-table__cell " title="Group1">Group2</div><div class="data-table__cell " title="680">680</div><div class="data-table__cell " title="3.87">6.67</div><div class="data-table__cell " title="8.3 e-21">8.3 e-215</div></div>
+                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">TGGCG</div><div class="data-table__cell " title="Cluster 2">Cluster 2</div><div class="data-table__cell " title="40 : 85">42 : 84</div><div class="data-table__cell " title="7.13511">7.83511</div><div class="data-table__cell " title="790">790</div><div class="data-table__cell " title="3.87">8.87</div><div class="data-table__cell " title="3.5 e-21">3.5 e-215</div></div>
+                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">TATAAA</div><div class="data-table__cell " title="Cluster 2">Cluster 2</div><div class="data-table__cell " title="40 : 85">-47 : -12</div><div class="data-table__cell " title="7.13511">7.33511</div><div class="data-table__cell " title="690">690</div><div class="data-table__cell " title="3.87">7.58</div><div class="data-table__cell " title="8.3 e-21">8.3 e-215</div></div>
+                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">[AG]G[GC]CCA</div><div class="data-table__cell " title="Cluster 2">Cluster 2</div><div class="data-table__cell " title="40 : 85">-94 : -73</div><div class="data-table__cell " title="7.13511">6.13881</div><div class="data-table__cell " title="680">680</div><div class="data-table__cell " title="3.87">6.67</div><div class="data-table__cell " title="8.3 e-21">8.3 e-215</div></div>
                        
-                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">TGCAA</div><div class="data-table__cell " title="Group1">Group3</div><div class="data-table__cell " title="790">790</div><div class="data-table__cell " title="3.87">8.87</div><div class="data-table__cell " title="4.7 e-21">4.7 e-215</div></div>
-                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">TGGAC</div><div class="data-table__cell " title="Group1">Group3</div><div class="data-table__cell " title="690">690</div><div class="data-table__cell " title="3.87">7.58</div><div class="data-table__cell " title="4.7 e-21">4.7 e-215</div></div>
-                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">TGGAG</div><div class="data-table__cell " title="Group1">Group3</div><div class="data-table__cell " title="500">500</div><div class="data-table__cell " title="3.87">6.67</div><div class="data-table__cell " title="4.38 e-21">4.38 e-215</div></div>
+                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">TGCAA</div><div class="data-table__cell " title="Cluster 3">Cluster 3</div><div class="data-table__cell " title="40 : 85">40 : 85</div><div class="data-table__cell " title="7.13511">6.13511</div><div class="data-table__cell " title="790">790</div><div class="data-table__cell " title="3.87">8.87</div><div class="data-table__cell " title="4.7 e-21">4.7 e-215</div></div>
+                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">TGGAC</div><div class="data-table__cell " title="Cluster 3">Cluster 3</div><div class="data-table__cell " title="40 : 85">42 : 84</div><div class="data-table__cell " title="7.13511">5.13511</div><div class="data-table__cell " title="690">690</div><div class="data-table__cell " title="3.87">7.58</div><div class="data-table__cell " title="4.7 e-21">4.7 e-215</div></div>
+                        <div class="data-table__row" data-row-idx="0"><div class="data-table__cell data-table__cell--bold" title="CGGAA">TGGAG</div><div class="data-table__cell " title="Cluster 3">Cluster 3</div><div class="data-table__cell " title="40 : 85">36 : 82</div><div class="data-table__cell " title="7.13511">4.13511</div><div class="data-table__cell " title="500">500</div><div class="data-table__cell " title="3.87">6.67</div><div class="data-table__cell " title="4.38 e-21">4.38 e-215</div></div>
                       
                       </section>
                       <section><h2>Summary Data</h2> 
-                              <div class="data-table__header"><span><br><br>TOTAL TISSUES Z-SCORE</span></div>
-                              <div class="js-bar-chart-container card--chart"></div>
-                              <div class="data-table__header"><span><br><br>TOP 5 MOTIFS</span></div>
-                              <div class="js-donut-container"></div>
+                            <div class="data-table__header"><span><br><br>MOTIFS WITH HIGHEST Z-SCORE</span></div>
+                            <div class="js-bar-chart-container card--chart"></div>
+
+                             <div class="data-table__header"><span><br><br>CLUSTERS OF THE HIGHEST MOTIFS</span></div>
+                              <div class="js-line-chart-container card--chart"></div>
+                                <div id="brush">
+                                  <div id="line"></div>
+                                    <div id="line1"></div>
+                                    <div class="js-line-brush-chart-container card--chart"></div>
+                                </div>
+
+
+                              
                               <!-- <div class="js-donut-chart-container donut-chart-container"></div>
                               <div class="js-legend-chart-container legend-chart-container"></div> -->
-                              <div class="data-table__header"><span><br><br>COMPARE MOTIFS THROUGH THE TISSUE</span></div>
+                              <div class="data-table__header"><span><br><br>COMPARE MOTIFS THROUGH THE CLUSTERS</span></div>
                               <div class="js-stacked-bar-chart-tooltip-container"></div>
+                              <div class="data-table__header"><span><br><br>MOTIFS IN TISSUE</span></div>
+                              <div class="card--chart">
+                              <div class="js-donut-chart-container donut-chart-container" style="height:450px; width:450px;"></div>
+                              <div class="js-legend-chart-container legend-chart-container"></div>
                 
                       </section>
                       
@@ -260,8 +278,365 @@
       
       
       </script>
-   
-       
+
+<script id="jsbin-javascript">
+
+  var lineData = {
+"dataByTopic": [
+{
+"topic": 103,
+"topicName": "Cluster 1",
+"dates": [
+{ "date": "01-Jan", "value": 2, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 1, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 2, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 5, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 0, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 1, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 3, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 2, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 1, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 3, "date": "01-10-2019" }] },
+
+{
+"topic": 103,
+"topicName": "Cluster 1",
+"dates": [
+{ "date": "01-Jan", "value": 3, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 1, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 3, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 5, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 1, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 2, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 3, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 1, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 1, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 3, "date": "01-10-2019" }] },
+
+{
+"topic": 103,
+"topicName": "Cluster 1",
+"dates": [
+{ "date": "01-Jan", "value": 4, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 1, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 4, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 4, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 1, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 1, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 3, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 2, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 0, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 3, "date": "01-10-2019" }] },
+
+
+{
+"topic": 149,
+"topicName": "Cluster 2",
+"dates": [
+{ "date": "01-Jan", "value": 4, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 5, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 5, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 5, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 4, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 5, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 6, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 6, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 4, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 7, "date": "01-10-2019" }] },
+
+{
+"topic": 149,
+"topicName": "Cluster 2",
+"dates": [
+{ "date": "01-Jan", "value": 3, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 7, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 5, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 6, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 5, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 5, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 4, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 7, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 5, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 5, "date": "01-10-2019" }] },
+
+{
+"topic": 149,
+"topicName": "Cluster 2",
+"dates": [
+{ "date": "01-Jan", "value": 4, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 6, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 5, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 4, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 5, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 5, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 4, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 7, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 6, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 4, "date": "01-10-2019" }] },
+
+
+{
+"topic": 60,
+"topicName": "Cluster 3",
+"dates": [
+{ "date": "01-Jan", "value": 6, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 9, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 9, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 8, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 7, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 7, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 9, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 8, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 7, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 9, "date": "01-10-2019" }] },
+
+{
+"topic": 60,
+"topicName": "Cluster 3",
+"dates": [
+{ "date": "01-Jan", "value": 5, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 8, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 10, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 9, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 8, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 7, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 8, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 7, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 8, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 10, "date": "01-10-2019" }] },
+
+{
+"topic": 60,
+"topicName": "Cluster 3",
+"dates": [
+{ "date": "01-Jan", "value": 7, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 8, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 11, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 8, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 9, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 7, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 9, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 7, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 7, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 11, "date": "01-10-2019" }] },
+
+
+{
+"topic": 81,
+"topicName": "Cluster 4",
+"dates": [
+{ "date": "01-Jan", "value": 0, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 1, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 2, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 1, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 1, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 0, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 1, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 1, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 1, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 3, "date": "01-10-2019" }] },
+
+{
+"topic": 81,
+"topicName": "Cluster 4",
+"dates": [
+{ "date": "01-Jan", "value": 1, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 2, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 1, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 1, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 2, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 1, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 1, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 2, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 1, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 3, "date": "01-10-2019" }] },
+
+
+
+{
+"topic": 0,
+"topicName": "Cluster 5",
+"dates": [
+{ "date": "01-Jan", "value": 10, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 12, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 6, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 11, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 7, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 10, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 5, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 10, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 8, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 10, "date": "01-10-2019" }] },
+
+
+{
+"topic": 0,
+"topicName": "Cluster 5",
+"dates": [
+{ "date": "01-Jan", "value": 12, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 10, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 6, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 10, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 7, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 12, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 5, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 11, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 9, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 10, "date": "01-10-2019" }] },
+
+{
+"topic": 0,
+"topicName": "Cluster 5",
+"dates": [
+{ "date": "01-Jan", "value": 11, "date": "01-01-2019" },
+{ "date": "02-Jan", "value": 11, "date": "01-02-2019" },
+{ "date": "03-Jan", "value": 6, "date": "01-03-2019" },
+{ "date": "04-Jan", "value": 8, "date": "01-04-2019" },
+{ "date": "05-Jan", "value": 6, "date": "01-05-2019" },
+{ "date": "06-Jan", "value": 13, "date": "01-06-2019" },
+{ "date": "07-Jan", "value": 5, "date": "01-07-2019" },
+{ "date": "08-Jan", "value": 10, "date": "01-08-2019" },
+{ "date": "09-Jan", "value": 8, "date": "01-09-2019" },
+{ "date": "10-Jan", "value": 11, "date": "01-10-2019" }] },
+
+] };
+
+
+
+var lineMargin = { top: 60, bottom: 50, left: 50, right: 30 };
+
+
+/* ========================================================= */
+var chartTooltip = function chartTooltip() {
+return britecharts.tooltip().
+topicsOrder(lineData.dataByTopic.map(function (topic) {
+return topic.topic;
+}));
+};
+
+function createLineChart() {
+
+var lineContainer = d3.select('#line');
+var container = d3.select('.js-line-chart-container');
+
+
+var containerWidth = container.node() ? container.node().getBoundingClientRect().width : false;
+
+var lineChartInstance = britecharts.line().
+isAnimated(true).
+aspectRatio(0.5).
+grid('horizontal').
+tooltipThreshold(600).
+width(containerWidth).
+margin(lineMargin).
+dateLabel('date').
+colorSchema(['#CDDC39','#4B74FF','#673AB7','#795548','#FF9801']).
+on('customMouseOver', chartTooltip.show).
+on('customMouseMove', chartTooltip.update).
+on('customMouseOut', chartTooltip.hide).
+on('customDataEntryClick', function (d, mousePosition) {
+console.log('Data entry marker clicked', d);
+});
+
+var tooltipContainer = d3.select('.js-line-chart-container .metadata-group .hover-marker');
+
+tooltipContainer.datum([]).call(chartTooltip);
+
+d3.select('#button').on('click', function () {
+lineChartInstance.exportChart('linechart.png', 'Britecharts Line Chart');
+});
+lineContainer.datum(lineData).call(lineChartInstance);
+
+return lineChartInstance;
+}
+
+var brushMargin = { top: 0, bottom: 40, left: 50, right: 30 };
+
+
+function createBrushChart(optionalColorSchema) {
+var brushContainer = d3.select('.js-line-brush-chart-container');
+var containerWidth = brushContainer.node() ? brushContainer.node().getBoundingClientRect().width : false;
+var lineContainer = d3.select('#line');
+
+var brushChart = function brushChart() {
+return britecharts.brush().width(containerWidth).
+height(100).
+margin(brushMargin).
+on('customBrushEnd', function (brushExtent) {
+var format = d3.timeFormat('%m/%d/%Y');
+var chartTooltip = function chartTooltip() {
+return britecharts.tooltip().
+topicsOrder(lineData.dataByTopic.map(function (topic) {
+return topic.topic;
+}));
+};
+
+d3.select('.js-start-date').text(format(brushExtent[0]));
+d3.select('.js-end-date').text(format(brushExtent[1]));
+d3.select('.js-date-range').classed('is-hidden', false);
+
+// Filter
+var brushData = filterData(brushExtent[0], brushExtent[1]);
+
+var lineChart2 = britecharts.line().
+isAnimated(true).
+aspectRatio(0.5).
+grid('horizontal').
+tooltipThreshold(600).
+width(containerWidth).
+margin(lineMargin).
+dateLabel('date').
+on('customMouseOver', chartTooltip.show).
+on('customMouseMove', chartTooltip.update).
+on('customMouseOut', chartTooltip.hide).
+on('customDataEntryClick', function (d, mousePosition) {
+console.log('Data entry marker clicked', d);
+});
+d3.select('#line .line-chart').remove();
+lineContainer.datum(brushData).call(lineChart2);
+});
+};
+
+if (containerWidth) {
+var firstBrushChart = brushChart();
+brushContainer.datum(brushDataAdapter(lineData)).call(firstBrushChart);
+}
+}
+
+function brushDataAdapter(dataLine) {
+return dataLine.dataByDate.map(function (d) {
+d.value = d.topics.reduce(function (acc, topic) {
+return acc + topic.value;
+}, 0);
+
+return d;
+});
+}
+
+function filterData(d0, d1) {
+var data = JSON.parse(JSON.stringify(lineData));
+
+data.dataByDate = data.dataByDate.filter(isInRange.bind(null, d0, d1));
+
+data.dataByTopic = data.dataByTopic.map(function (topic) {
+topic.dates = topic.dates.filter(isInRange.bind(null, d0, d1));
+
+return topic;
+});
+
+return data;
+}
+
+function isInRange(d0, d1, d) {
+return new Date(d.date) >= d0 && new Date(d.date) <= d1;
+}
+
+createLineChart();
+createBrushChart();
+
+    
+    
+</script>
     
         
          

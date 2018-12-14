@@ -14,7 +14,7 @@
     height: 32px;
     border-radius: 2px; }
 .text-input--data-form {
-    width: 371px;
+    width: 80px;
     height: 32px;
     border-radius: 2px; }
   .text-input--data-form--small {
@@ -36,48 +36,48 @@
     resize: vertical; }
 
 
-    .data-form {
-      display: flex;
-      flex-flow: row wrap;
-      padding: 22px;
-      margin-bottom: 40px;
-      background: rgba(120, 135, 153, 0.08); }
-    .data-form__note {
-      color: #6C34DF;
-      margin: 8px 0 20px; }
-    .data-form__section {
-      flex-grow: 1; }
-      .data-form__section--grow0 {
-        flex-grow: 0; }
-      .data-form__section--grow2 {
-        flex-grow: 2; }
-      .data-form__section--full-width {
-        flex-basis: 100%; }
-    .data-form__section-header {
-      font-size: 18px;
-      font-weight: bold;
-      margin-top: 20px;
-      margin-bottom: 20px; }
-    .data-form__container {
-      /* display: flex;
-      flex-flow: row wrap;
-      align-items: center; */
-      margin-bottom: 30px; }
-      .data-form__container--inline {
-        display: inline-flex; }
-      .data-form__container-header {
-        line-height: 24px;
-        flex-basis: 100%;
-        font-weight: bold;
-        color: #333333;
-        opacity: .6; }
-        .data-form__container-header--large {
-          opacity: 1;
-          font-size: 18px;
-          margin-top: 20px;
-          margin-bottom: 30px; }
-    .data-form--regular {
-      background: none; }
+.data-form {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 22px;
+  margin-bottom: 40px;
+  background: rgba(120, 135, 153, 0.08); }
+.data-form__note {
+  color: #6C34DF;
+  margin: 8px 0 20px; }
+.data-form__section {
+  flex-grow: 1; }
+  .data-form__section--grow0 {
+    flex-grow: 0; }
+  .data-form__section--grow2 {
+    flex-grow: 2; }
+  .data-form__section--full-width {
+    flex-basis: 100%; }
+.data-form__section-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+.data-form__container {
+  /* display: flex;
+  flex-flow: row wrap;
+  align-items: center; */
+  margin-bottom: 30px; }
+  .data-form__container--inline {
+    display: inline-flex; }
+.data-form__container-header {
+  line-height: 24px;
+  flex-basis: 100%;
+  font-weight: bold;
+  color: #333333;
+  opacity: .6; }
+.data-form__container-header--large {
+  opacity: 1;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 30px; }
+.data-form--regular {
+  background: none; }
 
 .button {
   cursor: pointer;

@@ -1,13 +1,21 @@
 window.onload = () => {
 
+    
 
         const data = [
-                { name: 'Brain', id: 1, quantity: 86, percentage: 5 },
-                { name: 'Colon', id: 2, quantity: 300, percentage: 18 },
-                { name: 'Kidney', id: 3, quantity: 276, percentage: 16 },
-                { name: 'Lung', id: 4, quantity: 195, percentage: 11 },
-                { name: 'Stomach', id: 5, quantity: 36, percentage: 2 },
-                { name: 'Other', id: 0, quantity: 814, percentage: 48 }
+                { name: 'ATGGC', id: 1, quantity: 10.1857, percentage: 5 },
+                { name: 'GATCTAG', id: 2, quantity: 8.86419, percentage: 18 },
+                { name: 'TGGCG', id: 3, quantity: 7.83511, percentage: 16 },
+                { name: 'AACCCTAG', id: 4, quantity: 7.43958, percentage: 11 },
+                { name: '[AG]G[GC]CCA', id: 5, quantity: 6.13881, percentage: 2 },
+                { name: 'TGCAA', id: 6, quantity: 10.1857, percentage: 5 },
+                { name: 'TGGAC', id: 7, quantity: 8.86419, percentage: 18 },
+                { name: 'TAGAC', id: 8, quantity: 7.83511, percentage: 16 },
+                { name: 'TGGGG', id: 9, quantity: 7.43958, percentage: 11 },
+                { name: 'TTGAC', id: 10, quantity: 6.13881, percentage: 2 },
+
+
+
             ];
 
         function createHorizontalBarChart() {
@@ -32,46 +40,70 @@ window.onload = () => {
             barContainer.datum(data).call(barChart);
         }
 
-        function createDonutChart() {
-        let donutChart = britecharts.donut();
 
-        donutChart
-            .width(400)
-            .height(300);
-            
-        donutChart.colorSchema(['#F44335','#795548','#673AB7','#4B74FF','#FF9801','#CDDC39'])
-        d3.select('.js-donut-container').datum(data).call(donutChart);
+       
 
-        // legendChart.
-        // width(300).
-        // height(200).
-        // numberFormat('s');
-      
-        // donutContainer.datum(donutData.data).call(donutChart);
-        // // legendContainer = d3.select('.js-legend-chart-container');
-        // legendContainer.datum(donutData.data).call(legendChart);
 
-        }
+
+          function createDonutChart() {
+            var donutChart = britecharts.donut(),
+            donutContainer = d3.select('.js-donut-chart-container'),
+            containerWidth = donutContainer.node() ? donutContainer.node().getBoundingClientRect().width : false,
+            legendChart = britecharts.legend(),
+            legendContainer = void 0;
+
+            donutChart.
+            isAnimated(true).
+            highlightSliceById(2).
+            width(containerWidth).
+            height(containerWidth).
+            colorSchema(['#F44335','#795548','#673AB7','#4B74FF','#FF9801','#CDDC39']).
+            externalRadius(containerWidth / 2.5).
+            internalRadius(containerWidth / 5).
+            on('customMouseOver', function (data) {
+              legendChart.highlight(data.data.id);
+            }).
+            on('customMouseOut', function () {
+              legendChart.clearHighlight();
+            });
+
+            legendChart.
+            width(300).
+            height(200).
+
+            colorSchema(['#F44335','#795548','#673AB7','#4B74FF','#FF9801','#CDDC39']).
+            numberFormat('s');
+
+            donutContainer.datum(data).call(donutChart);
+            donutChart.colorSchema(['#F44335','#795548','#673AB7','#4B74FF','#FF9801','#CDDC39'])
+            legendContainer = d3.select('.js-legend-chart-container');
+            legendContainer.datum(data).call(legendChart);
+
+          }
+
 
         createHorizontalBarChart();
         createDonutChart();
 
         let barData = {
                 data:[
-                    {name: "Brain", value: 0.08167},
-                    {name: "Colon", value: 0.01492},
-                    {name: "Kidney", value: 0.02782},
-                    {name: "Lung", value: 0.04253},
-                    {name: "Ovary", value: 0.12702},
-                    {name: "Prostate", value: 0.02288},
-                    {name: "Stomach", value: 0.02015},
-                    {name: "Heart", value: 0.06094},
-                    {name: "Pancreas", value: 0.06966},
-                    {name: "Liver", value: 0.00153},
-                    {name: "Trachea", value: 0.00772},
-                    {name: "Appendix", value: 0.04025},
+                    {name: "ATGGC", value: 10.1857,},
+                    {name: "GATCTAG", value: 8.86419},
+                    {name: "AACCCTAG", value: 7.83511},
+                    {name: "[AG]G[GC]CCA", value: 7.43958},
+                    {name: "TGCAA", value: 6.13881},
+                    {name: "TGCAA", value: 9.1857,},
+                    {name: "TGGAC", value: 8.86419},
+                    {name: "TAGAC", value: 7.83511},
+                    {name: "TGGGG", value: 7.43958},
+                    {name: "TTGAC", value: 6.13881},
+
                 ]
                 };
+
+
+
+        
         function createSimpleBarChart() {
         let barChart = britecharts.bar(),
             barContainer = d3.select('.js-bar-chart-container'),
@@ -94,190 +126,141 @@ window.onload = () => {
         };
         };
         createSimpleBarChart();
-        window.onload = () => { createSimpleBarChart() }
+        // window.onload = () => { createSimpleBarChart() }
+
+
+
             
         let stackedBarData = {
         data:[
-            {stack: "AACCGG", name: "AACCGG", value: 10, tissue: "Brain"},
-            {stack: "AACCTT", name: "AACCTT", value: 20, tissue: "Brain"},
-            {stack: "AATTCC", name: "AATTCC", value: 10, tissue: "Brain"},
-            {stack: "AATTGG", name: "AATTGG", value: 10, tissue: "Brain"},
-            {stack: "CCTTGG", name: "CCTTGG", value: 10, tissue: "Brain"},
+            {stack: "Cluster 1", name: "TATAA", value: 10, tissue: "Cluster 1"},
+            {stack: "Cluster 1", name: "TATAT", value: 20, tissue: "Cluster 1"},
+            {stack: "Cluster 1", name: "TATAT", value: 10, tissue: "Cluster 1"},
+            {stack: "Cluster 1", name: "TATAA", value: 10, tissue: "Cluster 1"},
+            {stack: "Cluster 1", name: "ATAAA", value: 10, tissue: "Cluster 1"},
 
-            {stack: "AACCGG", name: "AACCGG", value: 10, tissue: "Colon"},
-            {stack: "AACCTT", name: "AACCTT", value: 10, tissue: "Colon"},
-            {stack: "AATTCC", name: "AATTCC", value: 30, tissue: "Colon"},
-            {stack: "AATTGG", name: "AATTGG", value: 10, tissue: "Colon"},
-            {stack: "CCTTGG", name: "CCTTGG", value: 20, tissue: "Colon"},
+            {stack: "Cluster 2", name: "AACCGG", value: 10, tissue: "Cluster 2"},
+            {stack: "Cluster 2", name: "AACCTT", value: 10, tissue: "Cluster 2"},
+            {stack: "Cluster 2", name: "AATTCC", value: 30, tissue: "Cluster 2"},
+            {stack: "Cluster 2", name: "AATTGG", value: 10, tissue: "Cluster 2"},
+            {stack: "Cluster 2", name: "CCTTGG", value: 20, tissue: "Cluster 2"},
 
-            {stack: "AACCGG", name: "AACCGG", value: 20, tissue: "Kidney"},
-            {stack: "AACCTT", name: "AACCTT", value: 20, tissue: "Kidney"},
-            {stack: "AATTCC", name: "AATTCC", value: 10, tissue: "Kidney"},
-            {stack: "AATTGG", name: "AATTGG", value: 10, tissue: "Kidney"},
-            {stack: "CCTTGG", name: "CCTTGG", value: 30, tissue: "Kidney"},
+            {stack: "Cluster 3", name: "AACCGG", value: 20, tissue: "Cluster 3"},
+            {stack: "Cluster 3", name: "AACCTT", value: 20, tissue: "Cluster 3"},
+            {stack: "Cluster 3", name: "AATTCC", value: 10, tissue: "Cluster 3"},
+            {stack: "Cluster 3", name: "AATTGG", value: 10, tissue: "Cluster 3"},
+            {stack: "Cluster 3", name: "CCTTGG", value: 30, tissue: "Cluster 3"},
 
-            {stack: "AACCGG", name: "AACCGG", value: 15, tissue: "Lung"},
-            {stack: "AACCTT", name: "AACCTT", value: 10, tissue: "Lung"},
-            {stack: "AATTCC", name: "AATTCC", value: 10, tissue: "Lung"},
-            {stack: "AATTGG", name: "AATTGG", value: 10, tissue: "Lung"},
-            {stack: "CCTTGG", name: "CCTTGG", value: 15, tissue: "Lung"},
+            {stack: "Cluster 4", name: "AACCGG", value: 15, tissue: "Cluster 4"},
+            {stack: "Cluster 4", name: "AACCTT", value: 10, tissue: "Cluster 4"},
+            {stack: "Cluster 4", name: "AATTCC", value: 10, tissue: "Cluster 4"},
+            {stack: "Cluster 4", name: "AATTGG", value: 10, tissue: "Cluster 4"},
+            {stack: "Cluster 4", name: "CCTTGG", value: 15, tissue: "Cluster 4"},
 
-            {stack: "AACCGG", name: "AACCGG", value: 10, tissue: "Prostate"},
-            {stack: "AACCTT", name: "AACCTT", value: 10, tissue: "Prostate"},
-            {stack: "AATTCC", name: "AATTCC", value: 5, tissue: "Prostate"},
-            {stack: "AATTGG", name: "AATTGG", value: 10, tissue: "Prostate"},
-            {stack: "CCTTGG", name: "CCTTGG", value: 10, tissue: "Prostate"},
+            {stack: "Cluster 5", name: "AACCGG", value: 10, tissue: "Cluster 5"},
+            {stack: "Cluster 5", name: "AACCTT", value: 10, tissue: "Cluster 5"},
+            {stack: "Cluster 5", name: "AATTCC", value: 5, tissue: "Cluster 5"},
+            {stack: "Cluster 5", name: "AATTGG", value: 10, tissue: "Cluster 5"},
+            {stack: "Cluster 5", name: "CCTTGG", value: 10, tissue: "Cluster 5"},
 
-            {stack: "AACCGG", name: "AACCGG", value: 10, tissue: "Stomach"},
-            {stack: "AACCTT", name: "AACCTT", value: 10, tissue: "Stomach"},
-            {stack: "AATTCC", name: "AATTCC", value: 20, tissue: "Stomach"},
-            {stack: "AATTGG", name: "AATTGG", value: 20, tissue: "Stomach"},
-            {stack: "CCTTGG", name: "CCTTGG", value: 10, tissue: "Stomach"},
-
-            {stack: "AACCGG", name: "AACCGG", value: 10, tissue: "Heart"},
-            {stack: "AACCTT", name: "AACCTT", value: 20, tissue: "Heart"},
-            {stack: "AATTCC", name: "AATTCC", value: 10, tissue: "Heart"},
-            {stack: "CCTTGG", name: "CCTTGG", value: 10, tissue: "Heart"},
-
-
-            {stack: "AACCGG", name: "AACCGG", value: 10, tissue: "Pancreas"},
-            {stack: "AACCTT", name: "AACCTT", value: 10, tissue: "Pancreas"},
-            {stack: "AATTCC", name: "AATTCC", value: 20, tissue: "Pancreas"},
-            {stack: "AATTGG", name: "AATTGG", value: 20, tissue: "Pancreas"},
-            {stack: "CCTTGG", name: "CCTTGG", value: 10, tissue: "Pancreas"},
-
-
-
-            {stack: "AACCGG", name: "AACCGG", value: 5, tissue: "Liver"},
-            {stack: "AACCTT", name: "AACCTT", value: 20, tissue: "Liver"},
-            {stack: "AATTGG", name: "AATTGG", value: 15, tissue: "Liver"},
-            {stack: "CCTTGG", name: "CCTTGG", value: 15, tissue: "Liver"},
-
-
-            {stack: "AACCGG", name: "AACCGG", value: 10, tissue: "Trachea"},
-            {stack: "AACCTT", name: "AACCTT", value: 20, tissue: "Trachea"},
-            {stack: "AATTCC", name: "AATTCC", value: 10, tissue: "Trachea"},
-            {stack: "AATTGG", name: "AATTGG", value: 10, tissue: "Trachea"},
-
-            {stack: "AACCGG", name: "AACCGG", value: 20, tissue: "Appendix"},
-            {stack: "AACCTT", name: "AACCTT", value: 10, tissue: "Appendix"},
-            {stack: "AATTCC", name: "AATTCC", value: 30, tissue: "Appendix"},
-            {stack: "AATTGG", name: "AATTGG", value: 10, tissue: "Appendix"},
-            {stack: "CCTTGG", name: "CCTTGG", value: 20, tissue: "Appendix"},
 
 
 
         ]
         };
 
-        var stackedBarChart = new britecharts.stackedBar(),
-        chartTooltip = britecharts.tooltip(),
-        container = d3.select('.js-stacked-bar-chart-tooltip-container'),
-        containerWidth = container.node() ? container.node().getBoundingClientRect().width : false,
-        tooltipContainer;
 
-         stackedBarChart
-                .tooltipThreshold(600)
-                .width(containerWidth)
-                .grid('horizontal')
-                .isAnimated(true)
-                .stackLabel('stack')
-                .nameLabel('tissue')
-                .valueLabel('value')
-                .on('customMouseOver', function() {
-                    chartTooltip.show();
-                })
-                .on('customMouseMove', function(dataPoint, topicColorMap, x,y) {
-                    chartTooltip.update(dataPoint, topicColorMap, x, y);
-                })
-                .on('customMouseOut', function() {
-                    chartTooltip.hide();
-                });
-              
-                stackedBarChart.colorSchema(['#795548','#FF9801','#CDDC39','#2096F3','#673AB7','#4B74FF'])
-                container.datum(stackedBarData.data).call(stackedBarChart);
-              
-                chartTooltip
-                  .topicLabel('values')
-                  .dateLabel('tissues')
-                  .nameLabel('stack')
-                  .title('Tissues')
-                //   .title('');
-              
-                tooltipContainer = d3.select('.js-stacked-bar-chart-tooltip-container .metadata-group');
-                tooltipContainer.datum([]).call(chartTooltip);
+        
+
+var stackedBarChart = new britecharts.stackedBar(),
+chartTooltip = britecharts.tooltip(),
+container = d3.select('.js-stacked-bar-chart-tooltip-container'),
+containerWidth = container.node() ? container.node().getBoundingClientRect().width : false,
+tooltipContainer;
+
+    stackedBarChart
+        .tooltipThreshold(600)
+        .width(containerWidth)
+        .grid('horizontal')
+        .isAnimated(true)
+        .stackLabel('stack')
+        .nameLabel('name')
+        .nameLabel('tissue')
+        .valueLabel('value')
+        .on('customMouseOver', function() {
+            chartTooltip.show();
+        })
+        .on('customMouseMove', function(dataPoint, topicColorMap, x,y) {
+            chartTooltip.update(dataPoint, topicColorMap, x, y);
+        })
+        .on('customMouseOut', function() {
+            chartTooltip.hide();
+        });
+        
+        stackedBarChart.colorSchema(['#795548','#FF9801','#CDDC39','#2096F3','#673AB7','#4B74FF'])
+        container.datum(stackedBarData.data).call(stackedBarChart);
+        
+        chartTooltip
+            .topicLabel('values')
+            .dateLabel('tissues')
+        //   .stackLabel('names')
+            .nameLabel('name')
+            .title('Clusters')
+        //   .title('');
+        
+        tooltipContainer = d3.select('.js-stacked-bar-chart-tooltip-container .metadata-group');
+        tooltipContainer.datum([]).call(chartTooltip);
 
 
-        // stackedBarChart
-        // .tooltipThreshold(600)
-        // .width(containerWidth)
-        // .grid('horizontal')
-        // .isAnimated(true)
-        // .stackLabel('stack')
-        // .nameLabel('tissue')
-        // .valueLabel('value')
-        // .on('customMouseOver', function() {
-        //     chartTooltip.show();
+createHorizontalStackedBarChart();
 
-        // })
-        // .on('customMouseMove', function(dataPoint, topicColorMap, x,y) {
-        //     chartTooltip.uptissue(dataPoint, topicColorMap, x, y);
-        // })
-        // .on('customMouseOut', function() {
-        //     chartTooltip.hide();
-        // });
-        // stackedBarChart.colorSchema(['#795548','#FF9801','#CDDC39','#2096F3','#673AB7','#4B74FF'])
-        // container.datum(stackedBarData.data).call(stackedBarChart);
+(function() {
+    var parent = document.querySelector(".range-slider");
+    if (!parent) return;
 
-        // chartTooltip
-        //     .topicLabel('tissue')
-        //     .tissueLabel('key')
-        //     .nameLabel('stack')
+    var rangeS = parent.querySelectorAll("input[type=range]"),
+            numberS = parent.querySelectorAll("input[type=number]");
 
-        // tooltipContainer = d3.select('.js-stacked-bar-chart-tooltip-container .metadata-group');
-        // tooltipContainer.datum([]).call(chartTooltip);
+    rangeS.forEach(function(el) {
+        el.oninput = function() {
+            var slide1 = parseFloat(rangeS[0].value),
+                    slide2 = parseFloat(rangeS[1].value);
 
-        createHorizontalStackedBarChart();
-        
-        (function() {
-            var parent = document.querySelector(".range-slider");
-            if (!parent) return;
-        
-            var rangeS = parent.querySelectorAll("input[type=range]"),
-                    numberS = parent.querySelectorAll("input[type=number]");
-        
-            rangeS.forEach(function(el) {
-                el.oninput = function() {
-                    var slide1 = parseFloat(rangeS[0].value),
-                            slide2 = parseFloat(rangeS[1].value);
-        
-                    if (slide1 > slide2) {
-                        [slide1, slide2] = [slide2, slide1];
-                        // var tmp = slide2;
-                        // slide2 = slide1;
-                        // slide1 = tmp;
-                    }
-        
-                    numberS[0].value = slide1;
-                    numberS[1].value = slide2;
-                };
-            });
-        
-            numberS.forEach(function(el) {
-                el.oninput = function() {
-                    var number1 = parseFloat(numberS[0].value),
-                            number2 = parseFloat(numberS[1].value);
-        
-                    if (number1 > number2) {
-                        var tmp = number1;
-                        numberS[0].value = number2;
-                        numberS[1].value = tmp;
-                    }
-        
-                    rangeS[0].value = number1;
-                    rangeS[1].value = number2;
-                };
-            });
-        })();
+            if (slide1 > slide2) {
+                [slide1, slide2] = [slide2, slide1];
+                // var tmp = slide2;
+                // slide2 = slide1;
+                // slide1 = tmp;
+            }
+
+            numberS[0].value = slide1;
+            numberS[1].value = slide2;
+        };
+    });
+
+    numberS.forEach(function(el) {
+        el.oninput = function() {
+            var number1 = parseFloat(numberS[0].value),
+                    number2 = parseFloat(numberS[1].value);
+
+            if (number1 > number2) {
+                var tmp = number1;
+                numberS[0].value = number2;
+                numberS[1].value = tmp;
+            }
+
+            rangeS[0].value = number1;
+            rangeS[1].value = number2;
+        };
+    });
+})();
+
+
+          
+
+
+
+
+
         
 }       
