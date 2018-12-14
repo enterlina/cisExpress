@@ -1,7 +1,7 @@
 const router = (function () {
 
-  const PAGES_KEY = 'cbvispages';
-  const PREFIX = 'compbiovis/';
+  // const PAGES_KEY = 'cbvispages';
+  // const PREFIX = 'compbiovis/';
 
   class Router {
     constructor () {
